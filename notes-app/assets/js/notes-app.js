@@ -1,3 +1,4 @@
+'use strict';
 let notes = getSavedNotes();
 
 const filters = {
@@ -8,8 +9,7 @@ const filters = {
 renderNotes(notes, filters);
 
 // change create note button text
-document.querySelector('#create-note').addEventListener('click', function(e) {
-  // e.target.textContent = 'first button text changed';
+document.querySelector('#create-note').addEventListener('click', e => {
   const id = uuidv4();
   const timestamp = moment().valueOf();
 
@@ -26,20 +26,18 @@ document.querySelector('#create-note').addEventListener('click', function(e) {
 });
 
 // Event Listeners
-document.querySelector('#search-text').addEventListener('input', function(e) {
+document.querySelector('#search-text').addEventListener('input', e => {
   filters.searchText = e.target.value;
   renderNotes(notes, filters);
 });
 
-document
-  .querySelector('#filter-by-select')
-  .addEventListener('change', function(e) {
-    filters.sortBy = e.target.value;
-    renderNotes(notes, filters);
-  });
+document.querySelector('#filter-by-select').addEventListener('change', e => {
+  filters.sortBy = e.target.value;
+  renderNotes(notes, filters);
+});
 
 // check for any localStorage updates
-window.addEventListener('storage', function(e) {
+window.addEventListener('storage', e => {
   notes = JSON.parse(e.newValue);
   saveNotes(notes);
   renderNotes(notes, filters);
