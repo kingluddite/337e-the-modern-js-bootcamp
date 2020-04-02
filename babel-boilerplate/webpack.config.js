@@ -1,9 +1,9 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
-    path: path.resolve(__dirname, 'public/scripts'),
+    path: path.resolve(__dirname, 'public/assets/js'),
     filename: 'bundle.js',
   },
   module: {
@@ -22,7 +22,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
-    publicPath: '/scripts/',
+    publicPath: '/assets/js/',
   },
   devtool: 'source-map',
-};
+}

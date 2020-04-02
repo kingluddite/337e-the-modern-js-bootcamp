@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Note</title>
+  <meta name="description" content="Notes App">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- generate your custom favicon &#45; https://favicon.io/favicon&#45;generator/ -->
+  <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+
+  <link rel="stylesheet" href="/assets/css/normalize.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+    <body>
+        <header class="header">
+          <div class="container">
+            <h1 class="header__title">Edit Notes App</h1>
+            <h2 class="header__subtitle">Take notes and never forget</h2>
+          </div>
+        </header>
+        <div class="actions">
+          <div class="actions__container actions__container--spaced">
+            <a href="/index.html">Home</a>
+            <span id="last-edited"></span>
+          </div>
+          <!-- ./actions__container -->
+        </div>
+        <!-- /.actions -->
+        <div class="container">
+          <input id="note-title" class="title-input" placeholder="Note title">
+          <textarea id="note-body" class="body-input" placeholder="Enter note text"></textarea>
+          <button id="remove-note" class="button button--secondary">Remove note</button>
+        </div>
+        <!-- ./container -->
+ <script src="/assets/js/edit-bundle.js"></script>
+</body>
+</html>
