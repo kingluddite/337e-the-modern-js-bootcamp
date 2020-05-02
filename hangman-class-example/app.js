@@ -13,7 +13,7 @@ window.addEventListener('keypress', e => {
   guessesEl.textContent = game1.statusMessage;
 });
 
-getPuzzle((error, puzzle) => {
+getPuzzle('4', (error, puzzle) => {
   if (error) {
     console.log(`Error: ${error}`);
   } else {
@@ -21,10 +21,18 @@ getPuzzle((error, puzzle) => {
   }
 });
 
-//
-// countryrequest.open('GET', 'http://restcountries.eu/rest/v2/all/');
-// countryrequest.send();
-// // 1. Make a new request for all countries
-// // 2. Parse the responseText to get back the array of objects
-// // 3. Find your country object by it's country code (alpha2Code property)
-// // 4. Print the full country name (name property)
+getCountry('MX', (error, country) => {
+  if (error) {
+    console.log(`Error: ${error}`);
+  } else {
+    console.log(`Country Name: ${country.name}`);
+  }
+});
+
+getCountry('US', (error, country) => {
+  if (error) {
+    console.log(`Error: ${error}`);
+  } else {
+    console.log(`Country Name: ${country.name}`);
+  }
+});
