@@ -13,26 +13,31 @@ window.addEventListener('keypress', e => {
   guessesEl.textContent = game1.statusMessage;
 });
 
-getPuzzle('4', (error, puzzle) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
+getPuzzle('4').then(
+  puzzle => {
+    // Promise gets resolved
     console.log(puzzle);
+  },
+  err => {
+    // Promise gets rejected
+    console.log(`Error: ${err}`);
   }
-});
+);
 
-getCountry('MX', (error, country) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
-    console.log(`Country Name: ${country.name}`);
+getCountry('MX').then(
+  country => {
+    console.log(country.name);
+  },
+  err => {
+    console.log(`This is the error: ${err}`);
   }
-});
+);
 
-getCountry('US', (error, country) => {
-  if (error) {
-    console.log(`Error: ${error}`);
-  } else {
-    console.log(`Country Name: ${country.name}`);
+getCountry('US').then(
+  country => {
+    console.log(country.name);
+  },
+  err => {
+    console.log(`The error: ${err}`);
   }
-});
+);
