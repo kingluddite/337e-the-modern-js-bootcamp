@@ -54,5 +54,11 @@ getDataPromise(10)
     return getDataPromise(data);
   })
   .then(data => {
+    return `this is some test data`;
+  })
+  .then(data => {
     console.log(`Promise Chaining data: ${data}`);
+  })
+  .catch(err => {
+    console.log(err);
   });
